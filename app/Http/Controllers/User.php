@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class User extends Controller
 {
     public function index(){
-        return view('user.index');
+        $plop = 'super!';
+        return view('user.index',['resultats'=>$plop]);
     }
 }

@@ -13,6 +13,8 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
-Route::get('/users', 'User@index') ;
+Route::get('/user', 'User@index')->name('UserIndex') ;
+Route::get('/categories', 'Category@index')->name('CatIndex') ;
+Route::get('/category/add', 'Category@add') ->name('NewCat');

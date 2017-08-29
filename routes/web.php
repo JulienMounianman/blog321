@@ -18,3 +18,4 @@ Route::get('/', function () {
 Route::get('/user', 'User@index')->name('UserIndex') ;
 Route::get('/categories', 'Category@index')->name('CatIndex') ;
 Route::get('/category/add', 'Category@add') ->name('NewCat');
+Route::post('/category/create','Category@create')->name('SaveNewCat');

@@ -18,4 +18,8 @@ Route::get('/', function () {
 Route::get('/user', 'User@index')->name('UserIndex') ;
 Route::get('/categories', 'Category@index')->name('CatIndex') ;
 Route::get('/category/add', 'Category@add') ->name('NewCat');
+Route::get('/category/{id}/edit', 'Category@edit') ->name('EditCat');
+Route::get('/category/{id}/delete', 'Category@delete') ->name('DeleteCat');
+Route::post('/category/{id}/update','Category@update')->name('UpdateCat');
 Route::post('/category/create','Category@create')->name('SaveNewCat');
+Route::GET('/category/{id}/show','Category@show')->name('ShowCat');

@@ -104,6 +104,7 @@
                 </div>
             </div>
         </div>
-
+        <script src="http://bulma.io/vendor/clipboard-1.7.1.min.js"></script>
+        <script src="http://bulma.io/lib/main.js"></script>
     </body>
 </html>

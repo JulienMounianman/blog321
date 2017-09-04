@@ -13,24 +13,18 @@ class AddTimestamps extends Migration
      */
     public function up()
     {
-        Schema::table('categories', function (Blueprint $table) {
+        Schema::table('categories', function(Blueprint $table){
             $table->timestamps();
-
         });
-        Schema::table('posts_tags', function (Blueprint $table) {
+        Schema::table('post_tag', function(Blueprint $table){
             $table->timestamps();
-
         });
-        Schema::table('tags', function (Blueprint $table) {
+        Schema::table('tags', function(Blueprint $table){
             $table->timestamps();
-
         });
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('users', function(Blueprint $table){
             $table->timestamps();
-
         });
-
-
     }
 
     /**
@@ -40,25 +34,35 @@ class AddTimestamps extends Migration
      */
     public function down()
     {
-        Schema::table('categories',function(Blueprint $table)
-        {
-           $table->dropColumn('created_at');
-           $table->dropColumn('updated_at');
-        });
-        Schema::table('tags',function(Blueprint $table)
-        {
+        Schema::table('categories', function (Blueprint $table) {
             $table->dropColumn('created_at');
             $table->dropColumn('updated_at');
         });
-        Schema::table('post_tags',function(Blueprint $table)
-        {
+        Schema::table('tags', function (Blueprint $table) {
             $table->dropColumn('created_at');
             $table->dropColumn('updated_at');
         });
-        Schema::table('users',function(Blueprint $table)
-        {
+        Schema::table('post_tag', function (Blueprint $table) {
+            $table->dropColumn('created_at');
+            $table->dropColumn('updated_at');
+        });
+        Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('created_at');
             $table->dropColumn('updated_at');
         });
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

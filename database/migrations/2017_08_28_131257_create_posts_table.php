@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCommentsTable extends Migration
+class CreatePostsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,17 @@ class CreateCommentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('comments',function (Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('content');
-            $table->integer('post_id')->unsigned();
-            $table->integer('user_id')->unsigned();
-            $table->integer('parent_id')->unsigned();
-            $table->foreign('post_id')->references('id')->on('posts');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('parent_id')->references('id')->on('comments');
+            $table->string('title');
+            $table->text('content');
             $table->timestamps();
+            // Clés étrangères
+            $table->integer('user_id')->unsigned();
+            $table->integer('category_id')->unsigned();
+            // Création de la relation
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 
@@ -33,6 +34,6 @@ class CreateCommentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts_tags');
+        Schema::dropIfExists('posts');
     }
 }

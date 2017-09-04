@@ -1,6 +1,6 @@
 @extends('templates.default')
 
-@section('title', 'Liste ...')
+@section('title', 'Liste Categories')
 
 @section('content')
     <table class="table">

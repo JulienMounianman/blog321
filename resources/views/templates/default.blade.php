@@ -7,6 +7,7 @@
 
     <!-- Add the CSRF token in a meta tag to have it easily in JS -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
 </head>
 <body>
 <div class="container">

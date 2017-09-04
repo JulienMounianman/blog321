@@ -4,16 +4,18 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Laratrust\Traits\LaratrustUserTrait;
 
 class User extends Authenticatable
 {
+    use LaratrustUserTrait;
     public $fillable = [
         'pseudo',
         'first_name',
         'last_name',
         'email',
-        'password',
         'role',
+        'password',
         'birthdate',
         'portfolio_url',
     ];

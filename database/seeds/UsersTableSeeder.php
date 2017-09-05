@@ -55,6 +55,23 @@ class UsersTableSeeder extends Seeder
             ]);
         }
 
+
+        for ($i = 0; $i < 100; $i++) {
+            DB::table('animes')->insert([
+                'title' => $faker->catchPhrase,
+                'status' => $faker->catchPhrase,
+                'pictures' => $faker->catchPhrase,
+                'vod' => $faker->catchPhrase,
+                'summary' => $faker->realText(200, 2),
+                'note' => $faker->numberBetween(1, 11),
+                'season' => $faker->numberBetween(1, 11),
+                'episode' => $faker->numberBetween(1, 11),
+                'licenced' => $faker->boolean(50),
+
+            ]);
+        }
+
+
         for ($i = 0; $i < 500; $i++) {
             DB::table('comments')->insert([
                 'content' => $faker->realText(200, 2),

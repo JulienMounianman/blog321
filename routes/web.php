@@ -23,6 +23,10 @@ Route::get('/tag/{id}', 'TagController@show')->name('TagShow');
 Route::get('/', 'PostController@index')->name('PostIndex');
 Route::get('/post/{id}', 'PostController@show')->name('PostShow');
 
+Route::get('/anime','AnimeController@index')->name('AnimeIndex');
+Route::get('/anime/top','AnimeController@top')->name('AnimeTop');
+Route::get('/anime/{id}','AnimeController@show')->name('AnimeShow');
+
 
 Route::group(['prefix' => 'admin' , 'middleware' =>'can:access-admin'], function () {
     Route::get('/users', 'Admin\UserController@index')->name('AdminUserIndex');

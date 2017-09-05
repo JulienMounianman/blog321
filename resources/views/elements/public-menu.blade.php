@@ -1,30 +1,34 @@
-<nav class="navbar ">
-    <div class="navbar-brand">
-        <a class="navbar-item" href="{{ url('/') }}">Blog321</a>
-        <div class="navbar-burger burger" data-target="navMenubd">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-
-    <div id="navMenubd" class="navbar-menu">
-        <div class="navbar-start">
-            <a class="navbar-item" href="{{ route('PostIndex') }}"><i class="fa fa-fw fa-file-text-o"></i> Posts</a>
-            <a class="navbar-item" href="{{ route('UserIndex') }}"><i class="fa fa-fw fa-users"></i> Membres</a>
-            <a class="navbar-item" href="{{ route('CatIndex') }}"><i class="fa fa-fw fa-book"></i> Catégories</a>
-            <a class="navbar-item" href="{{ route('TagIndex') }}"><i class="fa fa-fw fa-tags"></i> Tags</a>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Subarashii</a>
         </div>
 
-        <div class="navbar-end">
-            @component('elements.user-menu')@endcomponent
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="{{ route('PostIndex') }}"><i class="glyphicon glyphicon-file"></i> Posts</a></li>
+                <li><a href="{{ route('UserIndex') }}"><i class="glyphicon glyphicon-user"></i> Membres</a></li>
+                <li><a href="{{ route('CatIndex') }}"><i class="glyphicon glyphicon-book"></i> Catégories</a></li>
+                <li><a href="{{ route('TagIndex') }}"><i class="glyphicon glyphicon-tags"></i> Tags</a></li>
+                <li><a href="{{ route('AnimeIndex') }}"><i class="glyphicon glyphicon-film"></i> Anime</a></li>
+                <li><a href="{{ route('AnimeIndex') }}"><i class="glyphicon glyphicon-list-alt"></i> Classement</a></li>
+
+                @component('elements.user-menu')@endcomponent
+            </ul>
         </div>
+
+
     </div>
 </nav>
-
-
-
-
 
 
 

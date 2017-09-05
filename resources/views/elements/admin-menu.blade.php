@@ -1,69 +1,79 @@
-<nav class="navbar ">
-    <div class="navbar-brand">
-        <a class="navbar-item" href="{{ url('/') }}"><strong>Blog321</strong></a>
-        <div class="navbar-burger burger" data-target="navMenubd">
-            <span></span>
-            <span></span>
-            <span></span>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Subarashii</a>
         </div>
-    </div>
 
-    <div id="navMenubd" class="navbar-menu">
-        <div class="navbar-start">
-            <a href="{{ url('/') }}" class="navbar-item"><i class="fa fa-fw fa-globe"></i> Site public</a>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="{{ url('/') }}" class="navbar-item"><i class="fa fa-fw fa-globe"></i> Site public</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Article <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="{{ route('AdminPostIndex') }}" class="navbar-item">
+                                <i class="glyphicon glyphicon-list"></i> Liste
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('AdminPostCreate') }}" class="navbar-item">
+                                <i class="glyphicon glyphicon-plus"></i> Nouveau post
+                            </a>
+                        </li>
 
-            <!-- Posts -->
-            <div class="navbar-item has-dropdown is-hoverable">
-                <div class="navbar-link">
-                    <i class="fa fa-fw fa-file-text-o"></i> Articles
-                </div>
-                <div id="PostsDropdown" class="navbar-dropdown ">
-                    <a href="{{ route('AdminPostIndex') }}" class="navbar-item">
-                        <i class="fa fa-fw fa-list"></i> Liste
-                    </a>
-                    <a href="{{ route('AdminPostCreate') }}" class="navbar-item">
-                        <i class="fa fa-fw fa-plus"></i> Nouveau post
-                    </a>
-                </div>
-            </div>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="{{ route('AdminCatIndex') }}" class="navbar-item">
+                                <i class="glyphicon glyphicon-list"></i> Liste
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('AdminCatCreate') }}" class="navbar-item">
+                                <i class="glyphicon glyphicon-plus"></i> Nouvelle catégorie
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tags <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="{{ route('AdminTagIndex') }}" class="navbar-item">
+                                <i class="glyphicon glyphicon-list"></i> Liste
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('AdminTagCreate') }}" class="navbar-item">
+                                <i class="glyphicon glyphicon-plus"></i> Nouveau tag
+                            </a>
+                        </li>
+                    </ul>
+                </li>
 
-            <!-- Catégories -->
-            <div class="navbar-item has-dropdown is-hoverable">
-                <div class="navbar-link">
-                    <i class="fa fa-fw fa-book"></i> Catégories
-                </div>
-                <div id="PostsDropdown" class="navbar-dropdown ">
-                    <a href="{{ route('AdminCatIndex') }}" class="navbar-item">
-                        <i class="fa fa-fw fa-list"></i> Liste
+                <li>
+                    <a href="{{ route('AdminUserIndex') }}" class="navbar-item">
+                        <i class="glyphicon glyphicon-user"></i> Membres
                     </a>
-                    <a href="{{ route('AdminCatCreate') }}" class="navbar-item">
-                        <i class="fa fa-fw fa-plus"></i> Nouvelle catégorie
-                    </a>
-                </div>
-            </div>
+                </li>
 
-            <!-- Tags -->
-            <div class="navbar-item has-dropdown is-hoverable">
-                <div class="navbar-link">
-                    <i class="fa fa-fw fa-tags"></i> Tags
-                </div>
-                <div id="PostsDropdown" class="navbar-dropdown ">
-                    <a href="{{ route('AdminTagIndex') }}" class="navbar-item">
-                        <i class="fa fa-fw fa-list"></i> Liste
-                    </a>
-                    <a href="{{ route('AdminTagCreate') }}" class="navbar-item">
-                        <i class="fa fa-fw fa-plus"></i> Nouveau tag
-                    </a>
-                </div>
-            </div>
 
-            <!-- Membres -->
-            <a href="{{ route('AdminUserIndex') }}" class="navbar-item">
-                <i class="fa fa-fw fa-users"></i> Membres
-            </a>
+                @component('elements.user-menu')@endcomponent
+            </ul>
         </div>
-        <div class="navbar-end">
-            @component('elements.user-menu')@endcomponent
-        </div>
+
+
     </div>
 </nav>

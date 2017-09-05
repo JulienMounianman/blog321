@@ -19,7 +19,13 @@
                 <p>
                     <strong>{{auth()->user()->first_name}} {{auth()->user()->last_name}}</strong> <small>{{auth()->user()->pseudo}}</small> <small>{{auth()->user()->role}}</small>
                     <br>
-                    {{auth()->user()->email}}/{{auth()->user()->birthdate}} / <a href="http://{{auth()->user()->portfolio_url}}">Portfolio</a> / <a href="http://{{auth()->user()->website_url}}"> Website</a>
+                    {{auth()->user()->email}}
+                    <br>
+                    {{auth()->user()->birthdate}}
+                    <br>
+                    <a href="http://{{auth()->user()->portfolio_url}}">Portfolio</a>
+                    <br>
+                    <a href="http://{{auth()->user()->website_url}}"> Website</a>
 
                 </p>
             </div>
@@ -31,8 +37,9 @@
                         <span class="icon is-small"> <i class="fa fa-fw fa-file-text-o"></i></span>
 
                     </a>
+
                     <a class="level-item">
-                        Nombre de commentaires
+
 
                         <span class="icon is-small"><i class="fa fa-thumbs-up"></i></span>
 

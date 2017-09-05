@@ -18,6 +18,7 @@ class User extends Authenticatable
         'password',
         'birthdate',
         'portfolio_url',
+        'website_url',
     ];
 
     public function posts(){

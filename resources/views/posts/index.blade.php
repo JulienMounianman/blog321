@@ -17,11 +17,17 @@
                     <header class="card-header">
                         <p class="card-header-title">
                             <a href="{{route('PostShow', ['id'=>$post->id])}}">{{$post->title}}</a>
+
                         </p>
                     </header>
                     <div class="card-content">
                         <div class="content">
-                            <small>{{$post->created_at}}</small>
+                            <small>Create : {{ $post->updated_at->diffForHumans(now()) }}
+                            <br>
+                                Update : {{$post->created_at->diffForHumans(now())}}
+
+                            </small>
+                            <a class="level-right" href="{{route('UserShow' , ['id' => $post->user->id]) }}"> {{$post->user->pseudo}}</a>
                         </div>
                     </div>
                 </div>

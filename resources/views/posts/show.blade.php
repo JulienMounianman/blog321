@@ -5,7 +5,7 @@
 @section('content')
     Tags :
     @foreach($post->tags as $tag)
-        <i class="fa fa-tag"></i> {{ $tag->tag }} 
+        <i class="fa fa-tag"></i> {{ $tag->tag }}
     @endforeach
 
 
